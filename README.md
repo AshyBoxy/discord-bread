@@ -14,7 +14,7 @@ const client = new Bread.Client({
     "token": "Bot Token Here"
 });
 
-client.on("message", async (msg) => {
+client.on("message", (msg) => {
     if(msg.content == "!ping") {
         msg.sendChannel("Pong!");
     }
