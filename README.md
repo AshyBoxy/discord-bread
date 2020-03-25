@@ -8,7 +8,7 @@
 ## Example
 
 ```js
-const Bread = require("discord-bread");
+const Bread = require("@ashyboxy/discord-bread");
 
 const client = new Bread.Client({
     "token": "Bot Token Here"
