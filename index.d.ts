@@ -1,5 +1,5 @@
-// Type definitions for idk-help
-// Project: idk-help
+// Type definitions for discord-bread
+// Project: discord-bread
 // Definitions by: Ashton Barnard
 
 interface ClientOptions {
