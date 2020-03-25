@@ -1,6 +1,6 @@
 {
   "name": "@ashyboxy/discord-bread",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Discord Library for Node.js that I develop in my free time for fun.",
   "main": "index.js",
   "types": "index.d.ts",
