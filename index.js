@@ -80,3 +80,4 @@ class Client extends EventEmitter {
 
 exports.Client = Client;
 exports.Message = Message;
+exports.Channel = Channel;
