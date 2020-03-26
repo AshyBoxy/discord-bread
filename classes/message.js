@@ -1,6 +1,7 @@
 const fetch = require("node-fetch");
 
 const Channel = require("./channel");
+const User = require("./user");
 
 class Message {
     constructor(messageData, client) {
@@ -8,6 +9,7 @@ class Message {
         this.content = messageData.content;
         this.id = messageData.id;
         this.channel = messageData.channel_id;
+        this.user = new User(messageData.author, client);
         this.sendChannel = async (message) => {
             let data = await fetch(`https://discordapp.com/api/v6/channels/${messageData.channel_id}/messages`, {
                 "method": "POST", "body": JSON.stringify({

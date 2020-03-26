@@ -5,12 +5,10 @@ const client = new Discord.Client({
 });
 
 client.on("message", async (msg) => {
-    if (msg.content == ",example") {
-        msg.sendChannel("Example command!");
-    }
-
-    if (msg.content.startsWith(",channel")) {
-        console.log(msg);
+    // console.log(msg.user);
+    if (msg.user.id == client.id) return console.log(`Message "${msg.content}" was sent by me!`);
+    if (msg.content == "!test") {
+        msg.channel.send("Testing!");
     }
 });
 

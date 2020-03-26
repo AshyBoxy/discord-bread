@@ -3,7 +3,8 @@ const fetch = require("node-fetch"),
     WebSocket = require("ws");
 
 const Message = require("./classes/message"),
-    Channel = require("./classes/channel");
+    Channel = require("./classes/channel"),
+    User = require("./classes/user");
 
 let connected = false;
 
@@ -51,7 +52,7 @@ class Client extends EventEmitter {
                         this.id = clientData.id;
 
                         this.emit("connected");
-                    })
+                    });
                 }
             });
         });
@@ -81,3 +82,4 @@ class Client extends EventEmitter {
 exports.Client = Client;
 exports.Message = Message;
 exports.Channel = Channel;
+exports.User = User;

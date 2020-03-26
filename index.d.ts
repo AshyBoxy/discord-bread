@@ -7,7 +7,7 @@ interface ClientOptions {
 }
 
 export class Client {
-    constructor(options?: ClientOptions);
+    constructor(options?: ClientOptions): Client;
 
     public username: string;
     public discriminator: string;
@@ -22,21 +22,33 @@ export class Client {
 }
 
 export class Message {
-    constructor(messageData: Object, client: Client);
+    constructor(messageData: Object, client: Client): Message;
     public content: string;
-    public channel: Channel;
     public id: string;
+
+    public channel: Channel;
+    public user: User;
 
     public sendChannel(message: string): Promise<Message>;
 }
 
 export class Channel {
-    constructor(channelData: Object, client: Client);
+    constructor(channelData: Object, client: Client): Channel;
 
     public id: string;
     public name: string;
 
     public send(message: string): Promise<Message>;
+}
+
+export class User {
+    constructor(userData: Object, client: Client): User;
+
+    public id: string;
+    public username: string;
+    public discriminator: string;
+    public tag: string;
+    public bot: boolean;
 }
 
 interface ClientEvents {
