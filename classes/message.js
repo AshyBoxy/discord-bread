@@ -20,6 +20,22 @@ class Message {
             data = await data.json();
             return data;
         }
+        this.react = async (emojiName, emojiId) => {
+            let emoji = `${emojiName}:${emojiId}`;
+
+            if (!emojiId) emoji = emojiName;
+
+            emoji = require("querystring").escape(emoji);
+
+            await fetch(`https://discordapp.com/api/v6/channels/${this.channel.id}/messages/${this.id}/reactions/${emoji}/@me`, {
+                "method": "PUT",
+                "headers": {
+                    "Authorization": `Bot ${client._token}`
+                }
+            });
+
+            return;
+        }
 
     }
 

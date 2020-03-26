@@ -29,6 +29,8 @@ export class Message {
     public channel: Channel;
     public user: User;
 
+    public react(emojiName: string, emojiId: string): Promise<void>;
+    public react(emoji: string): Promise<void>;
     public sendChannel(message: string): Promise<Message>;
 }
 

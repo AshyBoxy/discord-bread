@@ -5,11 +5,14 @@ const client = new Discord.Client({
 });
 
 client.on("message", async (msg) => {
-    // console.log(msg.user);
-    if (msg.user.id == client.id) return console.log(`Message "${msg.content}" was sent by me!`);
     if (msg.content == "!test") {
         msg.channel.send("Testing!");
     }
+
+    msg.react("🍞").then(() => {
+        msg.react("shinybread", "683288243008962561");
+    });
+
 });
 
 client.on("connected", () => {
