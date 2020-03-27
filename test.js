@@ -12,7 +12,6 @@ client.on("message", async (msg) => {
     msg.react("🍞").then(() => {
         msg.react("shinybread", "683288243008962561");
     });
-
 });
 
 client.on("connected", () => {
